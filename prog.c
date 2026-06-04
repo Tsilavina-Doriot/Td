@@ -66,13 +66,13 @@ void mamaky()
         printf(" Âge     : %s ans\n", e[i].age);
         printf(" Niveau  : %s\n", e[i].niveau);
     }
-for(int k=0;k<100)
+for(int k=0;k<100; k++)
 {
     free(e[k].nom);
     free(e[k].prenoms);
     free(e[k].age);
     free(e[k].niveau);
-  k++;
+ 
 }
 }
 void enregistre(struct informations *etudiant)
