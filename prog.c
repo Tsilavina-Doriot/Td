@@ -19,7 +19,7 @@ void mamaky()
     e[i].nom=malloc(100*sizeof(char));
      e[i].prenoms=malloc(150*sizeof(char));
      e[i].age=malloc(20*sizeof(char));
-     e[i].niveau=malloc(2*sizeof(char));
+     e[i].niveau=malloc(5*sizeof(char));
     i++;
 }
 
@@ -29,9 +29,10 @@ void mamaky()
         printf("Erreur : Impossible d'ouvrir le fichier 'etudiant'.\n");
         return;
     }
+    i=0;
 
     // 1. Lecture et chargement de tout le fichier en mémoire
-    while(i < 100 && fscanf(mamaky, "%100s %150s %20s %2s", e[i].nom, e[i].prenoms, e[i].age, e[i].niveau) == 4)
+    while(i < 100 && fscanf(mamaky, "%100s %150s %20s %5s", e[i].nom, e[i].prenoms, e[i].age, e[i].niveau) == 4)
     {
         i++;
     }
@@ -65,13 +66,13 @@ void mamaky()
         printf(" Âge     : %s ans\n", e[i].age);
         printf(" Niveau  : %s\n", e[i].niveau);
     }
-    while(i<100)
+    while(int k=0<100)
 {
     free(e[i].nom);
     free(e[i].prenoms);
     free(e[i].age);
     free(e[i].niveau);
-  i++;
+  k++;
 }
 }
 void enregistre(struct informations *etudiant)
@@ -96,7 +97,7 @@ void inscription(struct informations *etudiant)
      etudiant->nom=malloc(100*sizeof(char));
     etudiant->prenoms=malloc(150*sizeof(char));
     etudiant->age=malloc(20*sizeof(char));
-    etudiant->niveau=malloc(2*sizeof(char));
+    etudiant->niveau=malloc(5*sizeof(char));
     
     printf("Noms : ");
     fgets(etudiant->nom, 100, stdin);
@@ -107,7 +108,7 @@ void inscription(struct informations *etudiant)
     etudiant->prenoms[strcspn(etudiant->prenoms, "\n")] = '\0';
 
     printf("Niveau : ");
-    fgets(etudiant->niveau, 10, stdin);
+    fgets(etudiant->niveau, 5, stdin);
     etudiant->niveau[strcspn(etudiant->niveau, "\n")] = '\0';
 
     printf("Age : ");
