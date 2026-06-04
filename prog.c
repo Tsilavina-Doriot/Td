@@ -14,9 +14,9 @@ void mamaky()
 {
     int i = 0;
     struct informations e[100];
-    while(i<=100)
+    while(i<100)
 {
-    e[i].noms=malloc(100*sizeof(char));
+    e[i].nom=malloc(100*sizeof(char));
      e[i].prenoms=malloc(150*sizeof(char));
      e[i].age=malloc(20*sizeof(char));
      e[i].niveau=malloc(2*sizeof(char));
@@ -65,21 +65,18 @@ void mamaky()
         printf(" Âge     : %s ans\n", e[i].age);
         printf(" Niveau  : %s\n", e[i].niveau);
     }
-    while(i<=100)
+    while(i<100)
 {
-    free(e[i]->nom);
-    free(e[i]->prenoms);
-    free(e[i]->age);
-    free(e[i]->niveau);
+    free(e[i].nom);
+    free(e[i].prenoms);
+    free(e[i].age);
+    free(e[i].niveau);
   i++;
 }
 }
 void enregistre(struct informations *etudiant)
 {
-    etudiant->nom=malloc(100*sizeof(char));
-    etudiant->prenoms=malloc(150*sizeof(char));
-    etudiant->age=malloc(20*sizeof(char));
-    etudiant->niveau=malloc(2*sizeof(char));
+   
     FILE *fichier = fopen("etudiant", "a");
     if (fichier == NULL) {
         printf("Erreur lors de l'ouverture du fichier\n");
@@ -96,6 +93,11 @@ void enregistre(struct informations *etudiant)
 
 void inscription(struct informations *etudiant)
 {
+     etudiant->nom=malloc(100*sizeof(char));
+    etudiant->prenoms=malloc(150*sizeof(char));
+    etudiant->age=malloc(20*sizeof(char));
+    etudiant->niveau=malloc(2*sizeof(char));
+    
     printf("Noms : ");
     fgets(etudiant->nom, 100, stdin);
     etudiant->nom[strcspn(etudiant->nom, "\n")] = '\0'; 
