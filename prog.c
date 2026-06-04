@@ -66,7 +66,7 @@ void mamaky()
         printf(" Âge     : %s ans\n", e[i].age);
         printf(" Niveau  : %s\n", e[i].niveau);
     }
-    while(int k=0<100)
+for(int k=0;k<100)
 {
     free(e[k].nom);
     free(e[k].prenoms);
