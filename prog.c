@@ -68,10 +68,10 @@ void mamaky()
     }
     while(int k=0<100)
 {
-    free(e[i].nom);
-    free(e[i].prenoms);
-    free(e[i].age);
-    free(e[i].niveau);
+    free(e[k].nom);
+    free(e[k].prenoms);
+    free(e[k].age);
+    free(e[k].niveau);
   k++;
 }
 }
